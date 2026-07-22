@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import java.util.Optional;
+
 @SpringBootApplication
 public class SpringDataJpaExApplication {
 
@@ -18,23 +20,41 @@ public class SpringDataJpaExApplication {
 
 		StudentRepo repo = context.getBean(StudentRepo.class);
 
-		s1.setRollNo(101);
-		s1.setName("Navin");
-		s1.setMarks(75);
-
-
+//		s1.setRollNo(101);
+//		s1.setName("Navin");
+//		s1.setMarks(75);
+//
+//
 		s2.setRollNo(102);
 		s2.setName("Kiran");
-		s2.setMarks(80);
+		s2.setMarks(55);
+//
+//
+//		s3.setRollNo(103);
+//		s3.setName("Harsh");
+//		s3.setMarks(70);
+//
+//		repo.save(s1);
+//		repo.save(s2);
+//		repo.save(s3);
+
+		// Get all
+//		System.out.println(repo.findAll());
+
+		// getbyId
+//		Optional<Student> s = repo.findById(103);
+//		System.out.println(s.orElse(new Student()));
+//
+//		// FindByName
+//		System.out.println(repo.findByName("Navin"));
+//
+//		// FindByMarks
+//		System.out.println(repo.findByMarks(75));
+
+		//   System.out.println(repo.save(s2));
+		repo.delete(s2);
 
 
-		s3.setRollNo(103);
-		s3.setName("Harsh");
-		s3.setMarks(70);
-
-		repo.save(s1);
-		repo.save(s2);
-		repo.save(s3);
 
 	}
 
